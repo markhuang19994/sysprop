@@ -1,6 +1,7 @@
 package com.example.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 public class SysPropLog {
@@ -12,6 +13,9 @@ public class SysPropLog {
 
     @Column(name = "PROJECT_NAME")
     private String projectName;
+
+    @Column(name = "DATE")
+    private Timestamp date;
 
     @Column(name = "KEY")
     private String key;
@@ -51,11 +55,20 @@ public class SysPropLog {
         this.value = value;
     }
 
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "SysPropLog{" +
                 "id=" + id +
                 ", projectName='" + projectName + '\'' +
+                ", date=" + date +
                 ", key='" + key + '\'' +
                 ", value='" + value + '\'' +
                 '}';
