@@ -1,0 +1,19 @@
+server:
+  port: 7999
+
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  datasource:
+    platform: h2
+    schema: classpath:schema.sql
+
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+
