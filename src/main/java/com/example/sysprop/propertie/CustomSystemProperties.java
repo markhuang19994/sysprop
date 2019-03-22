@@ -20,12 +20,7 @@ public class CustomSystemProperties extends Properties {
 
     @Override
     public synchronized Object setProperty(String key, String value) {
-        try {
-            beforeSetProperty(key, value);
-        } catch (NotAllowOperationException e) {
-            e.printStackTrace();
-            return null;
-        }
+        beforeSetProperty(key, value);
         Object o = super.setProperty(key, value);
         afterSetProperty(key, value);
         return o;
@@ -35,12 +30,7 @@ public class CustomSystemProperties extends Properties {
     public synchronized Object remove(Object o) {
         String key = String.valueOf(o);
         String value = super.getProperty(key);
-        try {
-            beforeClearProperty(key, String.valueOf(value));
-        } catch (NotAllowOperationException e) {
-            e.printStackTrace();
-            return null;
-        }
+        beforeClearProperty(key, String.valueOf(value));
         Object remove = super.remove(o);
         afterClearProperty(key, String.valueOf(remove));
         return remove;

@@ -1,6 +1,6 @@
 package com.example.exception;
 
-public class NotAllowOperationException extends Exception {
+public class NotAllowOperationException extends RuntimeException {
 
     public NotAllowOperationException() {
     }
