@@ -1,9 +1,7 @@
 package com.example;
 
-import com.example.repository.SysPropLogRepository;
 import com.example.service.SysPropLogService;
 import com.example.sysprop.propertie.CustomSystemProperties;
-import com.example.sysprop.propertie.listener.ChangeListener;
 import com.example.sysprop.propertie.listener.impl.DefaultChangeListener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

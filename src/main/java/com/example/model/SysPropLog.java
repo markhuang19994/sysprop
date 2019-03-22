@@ -11,17 +11,17 @@ public class SysPropLog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "PROJECT_NAME")
-    private String projectName;
-
-    @Column(name = "DATE")
-    private Timestamp date;
-
     @Column(name = "KEY")
     private String key;
 
     @Column(name = "VALUE")
     private String value;
+
+    @Column(name = "LAST_MODIFY_PROJECT")
+    private String lastModifyProject;
+
+    @Column(name = "LAST_MODIFY_TIME")
+    private Timestamp lastModifyTime;
 
     public Long getId() {
         return id;
@@ -31,12 +31,12 @@ public class SysPropLog {
         this.id = id;
     }
 
-    public String getProjectName() {
-        return projectName;
+    public String getLastModifyProject() {
+        return lastModifyProject;
     }
 
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
+    public void setLastModifyProject(String lastModifyProject) {
+        this.lastModifyProject = lastModifyProject;
     }
 
     public String getKey() {
@@ -55,20 +55,20 @@ public class SysPropLog {
         this.value = value;
     }
 
-    public Timestamp getDate() {
-        return date;
+    public Timestamp getLastModifyTime() {
+        return lastModifyTime;
     }
 
-    public void setDate(Timestamp date) {
-        this.date = date;
+    public void setLastModifyTime(Timestamp lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
     }
 
     @Override
     public String toString() {
         return "SysPropLog{" +
                 "id=" + id +
-                ", projectName='" + projectName + '\'' +
-                ", date=" + date +
+                ", lastModifyProject='" + lastModifyProject + '\'' +
+                ", lastModifyTime=" + lastModifyTime +
                 ", key='" + key + '\'' +
                 ", value='" + value + '\'' +
                 '}';

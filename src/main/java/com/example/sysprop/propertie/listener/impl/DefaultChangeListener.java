@@ -7,7 +7,6 @@ import com.example.sysprop.propertie.listener.ChangeListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 @Service
@@ -36,8 +35,8 @@ public class DefaultChangeListener implements ChangeListener {
         SysPropLog sysPropLog = new SysPropLog();
         sysPropLog.setKey(key);
         sysPropLog.setValue(value);
-        sysPropLog.setDate(new Timestamp(System.currentTimeMillis()));
-        sysPropLog.setProjectName(PROJECT);
+        sysPropLog.setLastModifyTime(new Timestamp(System.currentTimeMillis()));
+        sysPropLog.setLastModifyProject(PROJECT);
         sysPropLogService.saveAndFlush(sysPropLog);
     }
 
